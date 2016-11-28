@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+	<head>
+		<!-- Angular Material style sheet -->
+		<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" href="./styles.css">
+		<style>.fa { font-size: 24px; }></style>
+	</head>
+
+	<!-- define angular controller -->
+	<body ng-controller="mainController">
+
+<!--
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+			<li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+			<li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li>
+		</ul>
+-->
+
+		<div id="main">
+
+			<!-- angular templating -->
+			<!-- this is where content will be injected -->
+			<div ng-view></div>
+
+		</div>
+
+		<!-- Angular Material requires Angular.js Libraries -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+
+		<!-- Angular Material Library -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+
+		<script src="app.js"></script>
+
+	</body>
+
+</html>

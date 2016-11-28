@@ -1,0 +1,49 @@
+<div layout="row" class="search_top_bar">
+	<div flex="10">
+		<a href="#/">
+			<img src="./logo.png" class="search_logo"/>
+		</a>
+	</div>
+	<div flex="60" layout="row" layout-align="center center">
+		<input id="query_input" flex class="search_input" ng-model="query" ng-model-options="{ debounce: 500}">
+		<md-button class="md-icon-button" aria-label="More">
+			<md-icon md-font-set="material-icons">&#xe8b6</md-icon>
+		</md-button>
+	</div>
+	<div flex layout="row" layout-align="end center">
+		<md-menu md-offset="0 50" class="search_setting_button">
+			<md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+				<md-icon md-font-set="material-icons">&#xe8b8</md-icon>
+			</md-button>
+			<md-menu-content width="3" >
+				<md-menu-item ng-repeat="item in [1, 2, 3]">
+					<md-button>
+						<div layout="row" flex>
+							<p flex>Option {{item}}</p>
+							<md-icon md-font-set="material-icons">&#xe8b8</md-icon>
+						</div>
+					</md-button>
+				</md-menu-item>
+			</md-menu-content>
+		</md-menu>
+	</div>
+</div>
+
+<div layout="row">
+	<div flex="10"></div>
+	<div flex="60">
+		<div class="search_stats">About 1,210,000,000 results (0.48 seconds)</div>
+		<div ng-repeat="item in [1,2,3,4,5,6,7,8,9]">
+			<a href="#/search" class="search_title">title</a>
+			<div class="search_url">https://shaneqi.com</div>
+			<div class="search_description">hello connects you with people and content around your passions. Show the world who you are, express what you love, and create meaningful connections.</div>
+		</div>
+
+		<div class="search_pagination">
+			<a class="search_pagination_item" href="#/search"><</d>
+				<a class="search_pagination_item" ng-repeat="item in [1,2,3,4,5,6,7,8,9]" href="#/search">{{item}}</d>
+					<a class="search_pagination_item" href="#/search">></d>
+		</div>
+	</div>
+	<div flex></div>
+</div>

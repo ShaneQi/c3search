@@ -1,0 +1,29 @@
+<div layout="row" layout-align="center center" style="height:100vh;">
+	<div flex></div>
+	<div flex="50" layout="column" layout-align="center center">
+		<img src="./logo.png" class="home_logo"/>
+		<input class="home_input" ng-model="query" ng-change="goToSearch()"/>
+		<md-button class="md-raised home_search_button">Search</md-button>
+	</div>
+	<div flex>
+	</div>
+	<div class="footer">
+		<md-menu md-position-mode="target-right target" md-offset="25 -160" >
+			<md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+				<md-icon md-font-set="material-icons">&#xe8b8</md-icon>
+			</md-button>
+			<md-menu-content width="3" >
+				<md-menu-item ng-repeat="item in [1, 2, 3]">
+					<md-button>
+						<div layout="row" flex>
+							<p flex>Option {{item}}</p>
+				<md-icon md-font-set="material-icons">&#xe8b8</md-icon>
+						</div>
+					</md-button>
+				</md-menu-item>
+			</md-menu-content>
+		</md-menu>
+	</div>
+
+</div>
+
