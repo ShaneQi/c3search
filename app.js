@@ -69,7 +69,7 @@ scotchApp.controller('searchController', function($scope, productService, $http)
 		$scope.loading = true;
 		$http({
 			method: 'GET',
-			url: 'http://0.0.0.0:8080/search/' + $scope.query
+			url: 'http://138.68.55.252:8080/search/' + $scope.query
 		}).then(function successCallback(response) {
 			$scope.results = response.data.results;
 			$scope.resultCount = response.data.count;
