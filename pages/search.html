@@ -36,12 +36,7 @@
 			<md-progress-circular md-mode="indeterminate"></md-progress-circular>
 		</div>
 		<div ng-show="!loading">
-			<div class="search_stats">About 1,210,000,000 results (0.48 seconds)</div>
-			<div ng-repeat="item in [1]">
-				<a href="https://www.hello.com" class="search_title" target="_blank">hello network</a>
-				<div class="search_url">https://www.hello.com</div>
-				<div class="search_description">hello connects you with people and content around your passions. Show the world who you are, express what you love, and create meaningful connections.</div>
-			</div>
+			<div class="search_stats">About {{resultCount}} results ({{timeUse}} seconds)</div>
 
 			<div ng-repeat="item in results">
 				<a href="{{item.url}}" class="search_title" target="_blank">{{item.title}}</a>

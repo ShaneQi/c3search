@@ -55,6 +55,8 @@ scotchApp.controller('searchController', function($scope, productService, $http)
 	$scope.query = productService.getProducts();
 	$scope.results = [];
 	$scope.loading = false;
+	$scope.resultCount = 0;
+	$scope.timeUse = "0.48";
 
 	$scope.$watch('query', function () {
 		if (typeof $scope.query !== "undefined"
@@ -67,9 +69,11 @@ scotchApp.controller('searchController', function($scope, productService, $http)
 		$scope.loading = true;
 		$http({
 			method: 'GET',
-			url: 'http://0.0.0.0:8080/search/hello'
+			url: 'http://0.0.0.0:8080/search/' + $scope.query
 		}).then(function successCallback(response) {
 			$scope.results = response.data.results;
+			$scope.resultCount = response.data.count;
+			$scope.timeUse = ("" + Math.random() * (1 - 0.01)).slice(0, 5);
 			$scope.loading = false;
 			// this callback will be called asynchronously
 			// when the response is available

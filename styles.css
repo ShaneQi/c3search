@@ -83,3 +83,8 @@ img.search_logo {
 div.search_progress {
 	margin: 40px 0;
 }
+
+.dropdown-menu {
+	border: 0px;
+	border-radius: 0px;
+}
