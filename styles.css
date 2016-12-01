@@ -79,3 +79,7 @@ img.search_logo {
 	display: block;
 	background: rgba(255,255,255,0);
 }
+
+div.search_progress {
+	margin: 40px 0;
+}

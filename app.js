@@ -48,20 +48,36 @@ scotchApp.controller('mainController', function($scope, $window, productService)
 
 });
 
-scotchApp.controller('searchController', function($scope, productService) {
-
-	$scope.query = productService.getProducts();
+scotchApp.controller('searchController', function($scope, productService, $http) {
 
 	document.getElementById("query_input").focus();
 
+	$scope.query = productService.getProducts();
+	$scope.results = [];
+	$scope.loading = false;
+
 	$scope.$watch('query', function () {
 		if (typeof $scope.query !== "undefined"
-		 	&& $scope.query != "") {
+			&& $scope.query != "") {
 				$scope.search();
-		}
+			}
 	});
 
 	$scope.search = function() {
+		$scope.loading = true;
+		$http({
+			method: 'GET',
+			url: 'http://0.0.0.0:8080/search/hello'
+		}).then(function successCallback(response) {
+			$scope.results = response.data.results;
+			$scope.loading = false;
+			// this callback will be called asynchronously
+			// when the response is available
+		}, function errorCallback(response) {
+			$scope.loading = false;
+			// called asynchronously if an error occurs
+			// or server returns response with an error status.
+		});
 	}
 
 });
